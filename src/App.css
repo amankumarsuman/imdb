@@ -1,5 +1,13 @@
+*{
+  scroll-behavior: smooth;
+}
 .App {
   /* text-align: center; */
+  background-color: black;
+  min-height: 100vh;
+  color: white;
+  /* padding-top: 130px;
+  padding-bottom: 70px; */
 }
 body{
   background-color: black;
