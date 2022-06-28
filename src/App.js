@@ -1,19 +1,33 @@
-import Navbar from "./component/navbar/Navbar";
-// import VideoCurseol from './VideoCurseol';
-// import logo from './logo.svg';
+import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import VideoCurseol from "./component/videoComponent/VideoSlider";
-import FeaturedToday from "./component/featuredToday/FeaturedToday";
+
+import Series from "./Pages/Series/Series";
+
+import Search from "./Pages/Search/Search";
+
+import Container from "@mui/material/Container";
+import Navbar from "./component/navbar/Navbar";
+import Trending from "./Pages/Trending/Trending";
 import Movies from "./component/movies/Movies";
+import SimpleBottomNavigation from "./component/MainNav";
+
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Navbar />
-      {/* <VideoCurseol/> */}
-      <FeaturedToday />
       <Movies />
-    </div>
+      <div className="app">
+        <Container>
+          <Routes>
+            <Route path="/" component={Trending} exact />
+            <Route path="/movies" component={Movies} />
+            <Route path="/series" component={Series} />
+            <Route path="/search" component={Search} />
+          </Routes>
+        </Container>
+      </div>
+      <SimpleBottomNavigation />
+    </BrowserRouter>
   );
 }
 

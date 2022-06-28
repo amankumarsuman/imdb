@@ -26,4 +26,4 @@ const SingleContent = ({ id, poster, title, date, media_type, rating }) => {
   );
 };
 
-export default SingleContent;
+export { SingleContent };
